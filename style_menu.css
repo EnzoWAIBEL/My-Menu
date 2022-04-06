@@ -15,7 +15,18 @@ h1 {
   padding: 20px 30px;
   border: 2px solid #fff;
   border-radius: 25px;
-  box-shadow: 0 0 10px #fff, 0 0 55px rgba(255, 255, 255, 0.4);
+  animation: light 1.3s linear infinite;
+}
+@keyframes light {
+  0% {
+    box-shadow: 0 0 0 #fff;
+  }
+  50% {
+    box-shadow: 0 0 12px #fff, 0 0 55px rgba(255, 255, 255, 0.664);
+  }
+  100% {
+    box-shadow: 0 0 0 #fff;
+  }
 }
 body {
   display: flex;
