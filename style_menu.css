@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  margin: 60px 0;
+  letter-spacing: 6px;
+  font-style: italic;
+  text-shadow: 0 0 10px #fff, 0 0 55px rgba(255, 255, 255, 0.4);
+}
+p {
+  width: 1300px;
+  color: #fff;
+  padding: 15px 35px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 3%;
+  box-shadow: 0 0 10px #fff, 0 0 55px rgba(255, 255, 255, 0.4);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #8460ed, #ff1252);
+  font-family: "Lobster", cursive;
+}
+
+/* Menu parameter set here : */
+.menu {
+  position: fixed;
+  bottom: 30px;
+  width: 250px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transform-origin: 125px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(100px);
+  visibility: hidden;
+}
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+  visibility: visible;
+}
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  color: #111;
+  transition: 0.5s;
+  font-size: 22px;
+}
+.menu li a:hover {
+  background: var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 42px var(--clr);
+  width: 52px;
+  height: 52px;
+}
+.toggle {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
+  font-size: 3em;
+  transition: transform 1.25s;
+}
+.menu.active .toggle {
+  transform: rotate(315deg);
+}
